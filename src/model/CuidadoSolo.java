@@ -2,6 +2,7 @@ package model;
 
 public class CuidadoSolo {
 
+    // Ha = Hectatres
     private double tonelasPorHa7anos;
     private double conversaoToledaParaGrama = 1.00E6;
     private double areaPorHa = 27.0;

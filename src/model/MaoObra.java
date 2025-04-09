@@ -45,7 +45,7 @@ public class MaoObra {
         this.energiaPessoaAno = energiaPessoaAno;
     }
 
-    public double CalMO() {
+    public double CalcMO() {
         double resulMO = pessoa * horasTrabalhada * qtdDiasTrabalhado * energiaPessoaAno;
         return resulMO;
     }

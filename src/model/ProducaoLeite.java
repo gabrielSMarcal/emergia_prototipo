@@ -2,15 +2,16 @@ package model;
 
 public class ProducaoLeite {
 
+    // ha = hectares
     private int leitePorDia;
     private int diaAno = 365;
-    private float litroParaGrama = 1000;
-    private float kcalPorGrama = 0.625F;
-    private float joulesPorKcal = 4186;
-    private float hectaresFazenda;
+    private double litroParaGrama = 1000;
+    private double kcalPorGrama = 0.625F;
+    private double joulesPorKcal = 4186;
+    private double haFazenda;
 
-    public ProducaoLeite(int leitePorDia, float hectaresFazenda) {
-            this.hectaresFazenda = hectaresFazenda;
+    public ProducaoLeite(int leitePorDia, double haFazenda) {
+            this.haFazenda = haFazenda;
             this.leitePorDia = leitePorDia;
     }
 
@@ -30,42 +31,42 @@ public class ProducaoLeite {
         this.diaAno = diaAno;
     }
 
-    public float getLitroParaGrama() {
+    public double getLitroParaGrama() {
         return litroParaGrama;
     }
 
-    public void setLitroParaGrama(float litroParaGrama) {
+    public void setLitroParaGrama(double litroParaGrama) {
         this.litroParaGrama = litroParaGrama;
     }
 
-    public float getKcalPorGrama() {
+    public double getKcalPorGrama() {
         return kcalPorGrama;
     }
 
-    public void setKcalPorGrama(float kcalPorGrama) {
+    public void setKcalPorGrama(double kcalPorGrama) {
         this.kcalPorGrama = kcalPorGrama;
     }
 
-    public float getJoulesPorKcal() {
+    public double getJoulesPorKcal() {
         return joulesPorKcal;
     }
 
-    public void setJoulesPorKcal(float joulesPorKcal) {
+    public void setJoulesPorKcal(double joulesPorKcal) {
         this.joulesPorKcal = joulesPorKcal;
     }
 
-    public float getHectaresFazenda() {
-        return hectaresFazenda;
+    public double getHectaresFazenda() {
+        return haFazenda;
     }
 
-    public void setHectaresFazenda(float hectaresFazenda) {
-        this.hectaresFazenda = hectaresFazenda;
+    public void setHectaresFazenda(double haFazenda) {
+        this.haFazenda = haFazenda;
     }
 
     public double calcPL () {
 
         double energiaTotalano = leitePorDia * diaAno * litroParaGrama * kcalPorGrama* joulesPorKcal;
-        double resulPL = energiaTotalano/hectaresFazenda;
+        double resulPL = energiaTotalano/haFazenda;
 
         return resulPL;
     }

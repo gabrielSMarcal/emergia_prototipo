@@ -1,13 +1,14 @@
 package model;
 
 public class AguaUsada {
+
     private double litroPorDiaAnimal;
     private int qtdAnimal;
-    private int litrosAdicionalDia;
+    private double litrosAdicionalDia;
     private int diasAno = 365;
     private double qtdEnergiaPorKilo = 4.94E03;
 
-    public AguaUsada (double litroPorDiaAnimal, int qtdAnimal, int litrosAdicionalDia){
+    public AguaUsada (double litroPorDiaAnimal, int qtdAnimal, double litrosAdicionalDia){
         this.litroPorDiaAnimal= litroPorDiaAnimal;
         this.qtdAnimal = qtdAnimal;
         this.litrosAdicionalDia = litrosAdicionalDia;
@@ -29,7 +30,7 @@ public class AguaUsada {
         this.qtdAnimal = qtdAnimal;
     }
 
-    public int getLitrosAdicionalDia() {
+    public double getLitrosAdicionalDia() {
         return litrosAdicionalDia;
     }
 

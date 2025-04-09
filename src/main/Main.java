@@ -33,7 +33,7 @@ public class Main {
                     System.out.println("Digite a quantidade de animais:");
                     int qtdAnimal = leitura.nextInt();
                     System.out.println("Digite a quantidade de litros adicionais por dia:");
-                    int litrosAdicionalDia = leitura.nextInt();
+                    double litrosAdicionalDia = leitura.nextInt();
                     AguaUsada aguaUsada = new AguaUsada(litroPorDiaAnimal, qtdAnimal, litrosAdicionalDia);
                     valorEmergeticoTotal += aguaUsada.CalcAU();
                     System.out.println("Valor emergético da água usada: " + aguaUsada.CalcAU());
@@ -66,8 +66,8 @@ public class Main {
                     System.out.println("Digite a quantidade de dias trabalhados:");
                     int qtdDiasTrabalhado = leitura.nextInt();
                     MaoObra maoObra = new MaoObra(pessoa, horasTrabalhada, qtdDiasTrabalhado);
-                    valorEmergeticoTotal += maoObra.CalMO();
-                    System.out.println("Valor emergético da mão de obra: " + maoObra.CalMO());
+                    valorEmergeticoTotal += maoObra.CalcMO();
+                    System.out.println("Valor emergético da mão de obra: " + maoObra.CalcMO());
                     break;
                 case 5:
                     System.out.println("Digite a quantidade de ração utilizada em sacas:");

@@ -2,6 +2,7 @@ package model;
 
 public class PotencialQuimico {
 
+    // ha = hectares
     private double haFazenda;
     private double mediaChuva;
     private double conversaoHaParaM2 = 10000;
