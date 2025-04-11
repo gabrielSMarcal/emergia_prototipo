@@ -1,11 +1,13 @@
 package model;
 
-public class MaoObra {
+import database.AtributosFixos;
+import database.AtributosVariaveis;
+
+public class MaoObra extends AtributosVariaveis implements AtributosFixos{
 
     private int pessoa;
     private double horasTrabalhada;
     private int qtdDiasTrabalhado;
-    private double energiaPessoaAno = 4.6E09;
 
     public MaoObra (int pessoa, double horasTrabalhada, int qtdDiasTrabalhado){
         this.pessoa = pessoa;
@@ -13,40 +15,23 @@ public class MaoObra {
         this.qtdDiasTrabalhado = qtdDiasTrabalhado;
     }
 
-    public int getPessoa() {
+    @Override
+    public int getPessoas() {
         return pessoa;
     }
 
-    public void setPessoa(int pessoa) {
-        this.pessoa = pessoa;
-    }
-
-    public double getHorasTrabalhada() {
+    @Override
+    public double getHorasTrabalhadas() {
         return horasTrabalhada;
     }
 
-    public void setHorasTrabalhada(int horasTrabalhada) {
-        this.horasTrabalhada = horasTrabalhada;
-    }
-
+    @Override
     public int getQtdDiasTrabalhado() {
         return qtdDiasTrabalhado;
     }
 
-    public void setQtdDiasTrabalhado(int qtdDiasTrabalhado) {
-        this.qtdDiasTrabalhado = qtdDiasTrabalhado;
-    }
-
-    public double getEnergiaPessoaAno() {
-        return energiaPessoaAno;
-    }
-
-    public void setEnergiaPessoaAno(double energiaPessoaAno) {
-        this.energiaPessoaAno = energiaPessoaAno;
-    }
-
     public double CalcMO() {
-        double resulMO = pessoa * horasTrabalhada * qtdDiasTrabalhado * energiaPessoaAno;
+        double resulMO = pessoa * horasTrabalhada * qtdDiasTrabalhado * getEnergiaPessoaAno();
         return resulMO;
     }
 }

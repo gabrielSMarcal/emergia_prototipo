@@ -1,71 +1,33 @@
 package model;
 
-public class ProducaoLeite {
+import database.AtributosFixos;
+import database.AtributosVariaveis;
+
+public class ProducaoLeite extends AtributosVariaveis implements AtributosFixos {
 
     // ha = hectares
     private int leitePorDia;
-    private int diaAno = 365;
-    private double litroParaGrama = 1000;
-    private double kcalPorGrama = 0.625F;
-    private double joulesPorKcal = 4186;
-    private double haFazenda;
+    private double haFazendaLeite;
 
     public ProducaoLeite(int leitePorDia, double haFazenda) {
             this.haFazenda = haFazenda;
             this.leitePorDia = leitePorDia;
     }
 
-    public int getLeitePorDia() {
-        return leitePorDia;
-    }
-
-    public void setLeitePorDia(int leitePorDia) {
-        this.leitePorDia = leitePorDia;
-    }
-
-    public int getDiaAno() {
-        return diaAno;
-    }
-
-    public void setDiaAno(int diaAno) {
-        this.diaAno = diaAno;
-    }
-
-    public double getLitroParaGrama() {
-        return litroParaGrama;
-    }
-
-    public void setLitroParaGrama(double litroParaGrama) {
-        this.litroParaGrama = litroParaGrama;
-    }
-
-    public double getKcalPorGrama() {
-        return kcalPorGrama;
-    }
-
-    public void setKcalPorGrama(double kcalPorGrama) {
-        this.kcalPorGrama = kcalPorGrama;
-    }
-
-    public double getJoulesPorKcal() {
-        return joulesPorKcal;
-    }
-
-    public void setJoulesPorKcal(double joulesPorKcal) {
-        this.joulesPorKcal = joulesPorKcal;
-    }
-
-    public double getHectaresFazenda() {
+    @Override
+    public double getHaFazenda() {
         return haFazenda;
     }
 
-    public void setHectaresFazenda(double haFazenda) {
-        this.haFazenda = haFazenda;
+    @Override
+    public double getMediaChuva() {
+        return mediaChuva;
     }
 
     public double calcPL () {
 
-        double energiaTotalano = leitePorDia * diaAno * litroParaGrama * kcalPorGrama* joulesPorKcal;
+        double energiaTotalano = leitePorDia * getDiasAno() * getLitroParaGrama()
+                * getKcalPorGramaLeite() * getJoulesPorKcalLeite();
         double resulPL = energiaTotalano/haFazenda;
 
         return resulPL;

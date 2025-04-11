@@ -1,10 +1,12 @@
 package model;
 
-public class Racao {
+import database.AtributosFixos;
+import database.AtributosVariaveis;
+
+public class Racao extends AtributosVariaveis implements AtributosFixos{
 
     private int saca;
     private double valorSaca;
-    private double mesAno = 12;
     private double cotacaoDolar = 5.7;
 
     public Racao (int saca, double valorSaca){
@@ -12,36 +14,14 @@ public class Racao {
         this.valorSaca = valorSaca;
     }
 
+    @Override
     public int getSaca() {
         return saca;
     }
 
-    public void setSaca(int saca) {
-        this.saca = saca;
-    }
-
-    public double getValorSaca() {
+    @Override
+    public double valorSaca() {
         return valorSaca;
-    }
-
-    public void setValorSaca(double valorSaca) {
-        this.valorSaca = valorSaca;
-    }
-
-    public double getMesAno() {
-        return mesAno;
-    }
-
-    public void setMesAno(double mesAno) {
-        this.mesAno = mesAno;
-    }
-
-    public double getCotacaoDolar() {
-        return cotacaoDolar;
-    }
-
-    public void setCotacaoDolar(double cotacaoDolar) {
-        this.cotacaoDolar = cotacaoDolar;
     }
 
     public double CalcR() {
