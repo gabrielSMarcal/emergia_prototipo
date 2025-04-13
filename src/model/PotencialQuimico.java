@@ -1,9 +1,8 @@
 package model;
 
 import database.AtributosFixos;
-import database.AtributosVariaveis;
 
-public class PotencialQuimico extends AtributosVariaveis implements AtributosFixos {
+public class PotencialQuimico extends AtributosFixos {
 
     // ha = hectares
     private double haFazenda;
@@ -14,12 +13,10 @@ public class PotencialQuimico extends AtributosVariaveis implements AtributosFix
         this.mediaChuva = mediaChuva;
     }
 
-    @Override
     public double getHaFazenda() {
         return haFazenda;
     }
 
-    @Override
     public double getMediaChuva() {
         return mediaChuva;
     }

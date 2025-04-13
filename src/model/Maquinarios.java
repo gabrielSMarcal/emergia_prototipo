@@ -1,9 +1,8 @@
 package model;
 
 import database.AtributosFixos;
-import database.AtributosVariaveis;
 
-public class Maquinarios extends AtributosVariaveis implements AtributosFixos {
+public class Maquinarios extends AtributosFixos {
 
     private double qtdHoraTrator;
     private double valorHoraTrator;
@@ -14,12 +13,10 @@ public class Maquinarios extends AtributosVariaveis implements AtributosFixos {
         this.valorHoraTrator = valorHoraTrator;
     }
 
-    @Override
     public double getQtdHorasTrator() {
         return qtdHoraTrator;
     }
 
-    @Override
     public double getValorHoraTrator() {
         return valorHoraTrator;
     }

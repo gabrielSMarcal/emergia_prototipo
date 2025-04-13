@@ -1,9 +1,8 @@
 package model;
 
 import database.AtributosFixos;
-import database.AtributosVariaveis;
 
-public class MaoObra extends AtributosVariaveis implements AtributosFixos{
+public class MaoObra extends AtributosFixos{
 
     private int pessoa;
     private double horasTrabalhada;
@@ -15,17 +14,14 @@ public class MaoObra extends AtributosVariaveis implements AtributosFixos{
         this.qtdDiasTrabalhado = qtdDiasTrabalhado;
     }
 
-    @Override
     public int getPessoas() {
         return pessoa;
     }
 
-    @Override
     public double getHorasTrabalhadas() {
         return horasTrabalhada;
     }
 
-    @Override
     public int getQtdDiasTrabalhado() {
         return qtdDiasTrabalhado;
     }

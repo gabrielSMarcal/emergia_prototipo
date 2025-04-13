@@ -1,9 +1,8 @@
 package model;
 
 import database.AtributosFixos;
-import database.AtributosVariaveis;
 
-public class PerdaSolo extends AtributosVariaveis implements AtributosFixos {
+public class PerdaSolo extends AtributosFixos {
 
     private double perdaDeSoloToneladasPorAno;
 
@@ -11,7 +10,6 @@ public class PerdaSolo extends AtributosVariaveis implements AtributosFixos {
         this.perdaDeSoloToneladasPorAno = perdaDeSoloToneladasPorAno;
     }
 
-    @Override
     public double getPerdaDeSoloToneladasPorAno() {
         return perdaDeSoloToneladasPorAno;
     }

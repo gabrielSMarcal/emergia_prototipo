@@ -1,34 +1,31 @@
 package model;
 
 import database.AtributosFixos;
-import database.AtributosVariaveis;
 
-public class ProducaoLeite extends AtributosVariaveis implements AtributosFixos {
+public class ProducaoLeite extends AtributosFixos {
 
     // ha = hectares
     private int leitePorDia;
     private double haFazendaLeite;
 
-    public ProducaoLeite(int leitePorDia, double haFazenda) {
-            this.haFazenda = haFazenda;
+    public ProducaoLeite(int leitePorDia, double haFazendaLeite) {
+            this.haFazendaLeite = ProducaoLeite.this.haFazendaLeite;
             this.leitePorDia = leitePorDia;
     }
 
-    @Override
-    public double getHaFazenda() {
-        return haFazenda;
+    public int getLeitePorDia() {
+        return leitePorDia;
     }
 
-    @Override
-    public double getMediaChuva() {
-        return mediaChuva;
+    public double getHaFazenda() {
+        return haFazendaLeite;
     }
 
     public double calcPL () {
 
         double energiaTotalano = leitePorDia * getDiasAno() * getLitroParaGrama()
                 * getKcalPorGramaLeite() * getJoulesPorKcalLeite();
-        double resulPL = energiaTotalano/haFazenda;
+        double resulPL = energiaTotalano/haFazendaLeite;
 
         return resulPL;
     }

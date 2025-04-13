@@ -1,9 +1,8 @@
 package model;
 
 import database.AtributosFixos;
-import database.AtributosVariaveis;
 
-public class AguaUsada extends AtributosVariaveis implements AtributosFixos {
+public class AguaUsada extends AtributosFixos {
 
     private double litroPorDiaAnimal;
     private int qtdAnimal;
@@ -15,17 +14,14 @@ public class AguaUsada extends AtributosVariaveis implements AtributosFixos {
         this.litrosAdicionalDia = litrosAdicionalDia;
     }
 
-    @Override
     public double getLitroPorDiaAnimal() {
         return litroPorDiaAnimal;
     }
 
-    @Override
     public int getQtdAnimal() {
         return qtdAnimal;
     }
 
-    @Override
     public double getLitrosAdicionalDia() {
         return litrosAdicionalDia;
     }

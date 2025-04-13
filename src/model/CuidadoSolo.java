@@ -1,20 +1,18 @@
 package model;
 
 import database.AtributosFixos;
-import database.AtributosVariaveis;
 
-public class CuidadoSolo extends AtributosVariaveis implements AtributosFixos{
+public class CuidadoSolo extends AtributosFixos{
 
     // Ha = Hectatres
-    private double tonelasPorHa7anos;
+    private double toneladasPorHa7Anos;
 
-    @Override
     public double getToneladasPorHa7Anos() {
         return toneladasPorHa7Anos;
     }
 
     public double CalcCS() {
-        double resulCS = tonelasPorHa7anos * getConversaoToneladaParaGramas() * getAreaPorHa();
+        double resulCS = toneladasPorHa7Anos * getConversaoToneladaParaGramas() * getAreaPorHa();
         return resulCS;
     }
 }

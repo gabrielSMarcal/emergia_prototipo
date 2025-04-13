@@ -1,9 +1,8 @@
 package model;
 
 import database.AtributosFixos;
-import database.AtributosVariaveis;
 
-public class Eletricidade extends AtributosVariaveis implements AtributosFixos{
+public class Eletricidade extends AtributosFixos{
 
     private double energiaPORKWH;
 
@@ -12,7 +11,6 @@ public class Eletricidade extends AtributosVariaveis implements AtributosFixos{
         this.energiaPORKWH = energiaPORKWH;
     }
 
-    @Override
     public double getEnergiaPorKWH() {
         return energiaPORKWH;
     }

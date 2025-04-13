@@ -1,9 +1,8 @@
 package model;
 
 import database.AtributosFixos;
-import database.AtributosVariaveis;
 
-public class CombustivelUsado extends AtributosVariaveis implements AtributosFixos{
+public class CombustivelUsado extends AtributosFixos{
 
     private double horasTratorPorAno;
     private double qtdTrator;
@@ -16,17 +15,14 @@ public class CombustivelUsado extends AtributosVariaveis implements AtributosFix
 
     }
 
-    @Override
     public double getHorasTratorPorAno() {
         return horasTratorPorAno;
     }
 
-    @Override
     public double getQtdTrator() {
         return qtdTrator;
     }
 
-    @Override
     public double getLitrosPorHora() {
         return litrosPorHora;
     }
