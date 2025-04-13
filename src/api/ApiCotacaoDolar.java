@@ -1,17 +1,31 @@
 package api;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class ApiCotacaoDolar {
 
     private static final String API_URL = "https://api.currencyfreaks.com/v2.0/rates/latest?apikey=";
-    private static final String API_KEY = "11dc5b9f68f744a78d2bafab2591207a";
+
+    private static String getApiKey() throws IOException {
+        Properties properties = new Properties();
+        try (FileInputStream fis = new FileInputStream("src/config.properties")) {
+            properties.load(fis);
+        }
+        String apiKey = properties.getProperty("API_KEY");
+        if (apiKey == null || apiKey.isEmpty()) {
+            throw new IOException("API_KEY não encontrada no arquivo de configuração.");
+        }
+        return apiKey;
+    }
 
     public static double getCotacaoDolar() throws IOException {
-        String urlString = API_URL + API_KEY + "&symbols=USD";
+        String apiKey = getApiKey();
+        String urlString = API_URL + apiKey + "&symbols=USD";
         URL url = new URL(urlString);
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
