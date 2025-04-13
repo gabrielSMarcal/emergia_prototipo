@@ -20,6 +20,15 @@ public class Main {
                     3 - Calcular emergia por energia elétrica
                     4 - Calcular emergia por mão de obra
                     5 - Calcular emergia por quantidade de ração
+                    6 - Calcular emergia por  cuidado do solo
+                    7 - Calcular emergia por maquinário
+                    8 - Calcular emergia por perda do solo
+                    9 - Calcular emergia por potencial químico
+                    10 - Calcular emergia por Valor de consumo e manutenção da fazenda
+                    11 - Calcular emergia do gado
+                    12 - Calcular emergia por produção de leite
+                    
+                
                     99 - Verificar valor emergético final
                     0 - Sair
                     **************************************************************************""");
@@ -78,6 +87,60 @@ public class Main {
                     valorEmergeticoTotal += racaoUsada.calcR();
                     System.out.println("Valor emergético da ração: " + racaoUsada.calcR());
                     break;
+                case 6:
+                    System.out.println("Digite a quantidade de tonelada de produto utilizado para cuidar: ");
+                    double toneladasPorHa7Anos = leitura.nextDouble();
+                    System.out.println("Digite a quantidade de anos esas toneladas foi usada: ");
+                    int ano = leitura.nextInt();
+                    System.out.println("Digite a quantidade de area devastada pelo gado em Hectares:");
+                    double areaDevastadaPeloGado = leitura.nextDouble();
+                    CuidadoSolo cauidadoSolo = new CuidadoSolo(toneladasPorHa7Anos,areaDevastadaPeloGado, ano);
+                    valorEmergeticoTotal += cauidadoSolo.calcCS();
+                    System.out.println("Valor emergético do cuidado do solo: " + cauidadoSolo.calcCS());
+                    break;
+                case 7:
+                    System.out.println("Digite a quantidade de horas que o trator é usado:");
+                    double qtdHoraTrator = leitura.nextDouble();
+                    System.out.println("Digite o valor da hora do Trator, em reais: ");
+                    double valorHoraTrator = leitura.nextDouble();
+                    Maquinarios maquinarios = new Maquinarios(qtdHoraTrator,valorHoraTrator);
+                    valorEmergeticoTotal += maquinarios.calcM();
+                    System.out.println("Valor emergético do maquinário: " + maquinarios.calcM());
+                    break;
+                case 8:
+                    System.out.println("Digite a quantidade de perda do solo:");
+                    double perdaSolo = leitura.nextDouble();
+                    PerdaSolo perdasolo = new PerdaSolo(perdaSolo);
+                    valorEmergeticoTotal += perdasolo.calcPS();
+                    System.out.println("Valor emergético da perda do solo: " + perdasolo.calcPS());
+                    break;
+                case 9:
+                    System.out.println("Digite a area da fazenda em HA(hectares):");
+                    double haFazenda = leitura.nextDouble();
+                    System.out.println("Digite a quantidade de chuva por ano em m3 ");
+                    double precipitacao = leitura.nextDouble();
+                    PotencialQuimico pontecialquimico = new PotencialQuimico(haFazenda, precipitacao);
+                    valorEmergeticoTotal += pontecialquimico.calcPQ();
+                    System.out.println("Valor emergético do potencial químico da agua: " + pontecialquimico.calcPQ());
+                    break;
+                case 10:
+                    System.out.println("Digite o valor monetário utilizado para o consumo e manutenção do gado e fazenda por ano: ");
+                    double bens = leitura.nextDouble();
+                    System.out.println("Digite a quantidade de anos deste gasto: ");
+                    int anos = leitura.nextInt();
+                    ValorConsumoManutencao valorConsumoManutencao = new ValorConsumoManutencao(bens,anos);
+                    valorEmergeticoTotal += valorConsumoManutencao.calcBens();
+                    System.out.println("Valor emergético do maquinário: " + valorConsumoManutencao.calcBens());
+                    break;
+                case 12:
+                    System.out.println("Digite a area da sua fazenda: ");
+                    double HaFazenda = leitura.nextDouble();
+                    System.out.println("Digite a quantidade de leite produzido por dia: ");
+                    double leiteDia = leitura.nextDouble();
+                    ProducaoLeite producaoLeite = new ProducaoLeite(leiteDia,HaFazenda);
+                    valorEmergeticoTotal += producaoLeite.calcPL();
+                    System.out.println("Valor emergético do maquinário: " + producaoLeite.calcPL());
+                    break;
                 case 99:
                     System.out.println("Valor emergético total: " + valorEmergeticoTotal);
                     break;
@@ -98,4 +161,8 @@ public class Main {
             }
         }
     }
+    /* o que atualizei:
+    - Coloquei as classes que estavam faltando
+    - Testei todas as classes e todos os calculos estão certos, só falta do gado (faz o cálculo) e corrigir a API de cotação de dolar da classe ValorConsumoManutencao.
+     */
 }

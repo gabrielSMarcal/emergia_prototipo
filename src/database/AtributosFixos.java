@@ -18,7 +18,8 @@ public class AtributosFixos {
     double toneladaPorLitro = 1.00E03;
 
     // CuidadoSolo
-    double areaPorHa = 27.0;
+    /* double areaPorHa = 27.0;
+    esta variável não é constante */
 
     // Eletricidade
     int kwhParaKcal = 860;
@@ -33,7 +34,7 @@ public class AtributosFixos {
     double joulesPorKcal = 4186;
 
     // PotencialQuimico
-    double conversaoHaParaM2 = 10000;
+    double conversaoM2porHa = 10000;
     double kgPorM3 = 1000;
     double energiaPorKg = 4940;
 
@@ -42,6 +43,21 @@ public class AtributosFixos {
     double kcalPorGramaLeite = 0.625F;
     double joulesPorKcalLeite = 4186;
 
+    // Gado
+    double pesoSecoPorAnimal = 0.2;
+    double kcalPorGramaCarne = 7;
+    int gramasPorKg = 1000;
+
+
+    public  double getPesoSecoPorAnimal(){
+        return pesoSecoPorAnimal;
+    }
+    public double getKcalPorGramaCarne(){
+        return kcalPorGramaCarne;
+    }
+    public double getGramasPorKg(){
+        return gramasPorKg;
+    }
     public int getDiasAno() {
         return diasAno;
     }
@@ -64,10 +80,6 @@ public class AtributosFixos {
 
     public double getToneladaPorLitro() {
         return toneladaPorLitro;
-    }
-
-    public double getAreaPorHa() {
-        return areaPorHa;
     }
 
     public int getKwhParaKcal() {
@@ -99,7 +111,7 @@ public class AtributosFixos {
     }
 
     public double getConversaoHaParaM2() {
-        return conversaoHaParaM2;
+        return conversaoM2porHa;
     }
 
     public double getKgPorM3() {
@@ -121,4 +133,11 @@ public class AtributosFixos {
     public double getJoulesPorKcalLeite() {
         return joulesPorKcalLeite;
     }
+
+    /* o que atualizei:
+    - Adicionei as constantes e os get´s da classe Gado
+    - mudei o nome da variável conversaoM2porHa, porque a ordem estava errada
+    - Retirei uma constante que estava errado, ou melhor, não era constante.
+
+     */
 }

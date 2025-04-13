@@ -6,11 +6,11 @@ public class PotencialQuimico extends AtributosFixos {
 
     // ha = hectares
     private double haFazenda;
-    private double mediaChuva;
+    private double mediaChuvaAnoMetros; //é por ano em metros
 
-    public PotencialQuimico(double haFazenda, double mediaChuva){
+    public PotencialQuimico(double haFazenda, double mediaChuvaAnoMetros){
         this.haFazenda = haFazenda;
-        this.mediaChuva = mediaChuva;
+        this.mediaChuvaAnoMetros = mediaChuvaAnoMetros;
     }
 
     public double getHaFazenda() {
@@ -18,11 +18,14 @@ public class PotencialQuimico extends AtributosFixos {
     }
 
     public double getMediaChuva() {
-        return mediaChuva;
+        return mediaChuvaAnoMetros;
     }
 
     public double calcPQ() {
-        double resulPQ = haFazenda * mediaChuva * getConversaoHaParaM2() * getKgPorM3() * getEnergiaPorKg();
+        double resulPQ = haFazenda * mediaChuvaAnoMetros * getConversaoHaParaM2() * getKgPorM3() * getEnergiaPorKg();
         return resulPQ;
     }
+    /* O que atualizei:
+    - Mudei o nome da variável para ficar mais intuitivo.
+     */
 }

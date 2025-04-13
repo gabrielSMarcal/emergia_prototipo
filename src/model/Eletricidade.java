@@ -16,9 +16,11 @@ public class Eletricidade extends AtributosFixos{
     }
 
     public double calcE() {
-        double resulE = (energiaPORKWH * getMesAno() * getKwhParaKcal()) / getEnergiaPorKcal();
+        double resulE = (energiaPORKWH * getMesAno() * getKwhParaKcal()) * getEnergiaPorKcal();
         return resulE;
     }
-
+    /* O que foi atualizado:
+    - Corrigir o código
+     */
 
 }
