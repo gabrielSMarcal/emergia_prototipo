@@ -10,7 +10,7 @@ public class Bens extends AtributosFixos {
         return bens;
     }
 
-    public double CalcBens(){
+    public double calcBens(){
         double resulBens = bens / getAnos();
         return resulBens;
     }

@@ -35,8 +35,8 @@ public class Main {
                     System.out.println("Digite a quantidade de litros adicionais por dia:");
                     double litrosAdicionalDia = leitura.nextInt();
                     AguaUsada aguaUsada = new AguaUsada(litroPorDiaAnimal, qtdAnimal, litrosAdicionalDia);
-                    valorEmergeticoTotal += aguaUsada.CalcAU();
-                    System.out.println("Valor emergético da água usada: " + aguaUsada.CalcAU());
+                    valorEmergeticoTotal += aguaUsada.calcAU();
+                    System.out.println("Valor emergético da água usada: " + aguaUsada.calcAU());
                     break;
                 case 2:
                     System.out.println("Digite a quantidade de horas de tratores por ano:");
@@ -47,16 +47,16 @@ public class Main {
                     double valorCombustivel = leitura.nextDouble();
                     CombustivelUsado combustivelUtilizado = new CombustivelUsado(combustivel,
                             valorCombustivel, qtdTrator);
-                    valorEmergeticoTotal += combustivelUtilizado.calcularTotalEnergiaPorAno();
+                    valorEmergeticoTotal += combustivelUtilizado.calcularCombustivelUsado();
                     System.out.println("Valor emergético do combustivel: "
-                            + combustivelUtilizado.calcularTotalEnergiaPorAno());
+                            + combustivelUtilizado.calcularCombustivelUsado());
                     break;
                 case 3:
                     System.out.println("Digite a quantidade de energia elétrica utilizada por KWH:");
                     double energiaEletrica = leitura.nextDouble();
                     Eletricidade energia = new Eletricidade(energiaEletrica);
-                    valorEmergeticoTotal += energia.CalcE();
-                    System.out.println("Valor emergético da energia elétrica: " + energia.CalcE());
+                    valorEmergeticoTotal += energia.calcE();
+                    System.out.println("Valor emergético da energia elétrica: " + energia.calcE());
                     break;
                 case 4:
                     System.out.println("Digite a quantidade de pessoas:");
@@ -66,8 +66,8 @@ public class Main {
                     System.out.println("Digite a quantidade de dias trabalhados:");
                     int qtdDiasTrabalhado = leitura.nextInt();
                     MaoObra maoObra = new MaoObra(pessoa, horasTrabalhada, qtdDiasTrabalhado);
-                    valorEmergeticoTotal += maoObra.CalcMO();
-                    System.out.println("Valor emergético da mão de obra: " + maoObra.CalcMO());
+                    valorEmergeticoTotal += maoObra.calcMO();
+                    System.out.println("Valor emergético da mão de obra: " + maoObra.calcMO());
                     break;
                 case 5:
                     System.out.println("Digite a quantidade de ração utilizada em sacas:");
@@ -75,8 +75,8 @@ public class Main {
                     System.out.println("Digite o valor da saca:");
                     double valorSaca = leitura.nextDouble();
                     Racao racaoUsada = new Racao(saca, valorSaca);
-                    valorEmergeticoTotal += racaoUsada.CalcR();
-                    System.out.println("Valor emergético da ração: " + racaoUsada.CalcR());
+                    valorEmergeticoTotal += racaoUsada.calcR();
+                    System.out.println("Valor emergético da ração: " + racaoUsada.calcR());
                     break;
                 case 99:
                     System.out.println("Valor emergético total: " + valorEmergeticoTotal);

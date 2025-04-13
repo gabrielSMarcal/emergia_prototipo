@@ -14,7 +14,7 @@ public class PerdaSolo extends AtributosFixos {
         return perdaDeSoloToneladasPorAno;
     }
 
-    public double CalcPS(){
+    public double calcPS(){
         double resulPs = perdaDeSoloToneladasPorAno * getConversaoToneladaParaGramas()
                 * getGramasMOporGramasSolo() * getKcalPorGrama() * getJoulesPorKcal();
         return resulPs;

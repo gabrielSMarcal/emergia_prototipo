@@ -26,7 +26,7 @@ public class MaoObra extends AtributosFixos{
         return qtdDiasTrabalhado;
     }
 
-    public double CalcMO() {
+    public double calcMO() {
         double resulMO = pessoa * horasTrabalhada * qtdDiasTrabalhado * getEnergiaPessoaAno();
         return resulMO;
     }

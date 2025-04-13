@@ -11,7 +11,7 @@ public class CuidadoSolo extends AtributosFixos{
         return toneladasPorHa7Anos;
     }
 
-    public double CalcCS() {
+    public double calcCS() {
         double resulCS = toneladasPorHa7Anos * getConversaoToneladaParaGramas() * getAreaPorHa();
         return resulCS;
     }

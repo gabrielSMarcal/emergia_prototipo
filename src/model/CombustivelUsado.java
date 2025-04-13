@@ -27,7 +27,7 @@ public class CombustivelUsado extends AtributosFixos{
         return litrosPorHora;
     }
 
-    public double calcularTotalEnergiaPorAno() {
+    public double calcularCombustivelUsado() {
         double resulCU = (horasTratorPorAno * qtdTrator * getJoulesPorTonelada()) / getToneladaPorLitro();
         return resulCU;
     }

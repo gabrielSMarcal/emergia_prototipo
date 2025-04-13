@@ -1,12 +1,12 @@
 package model;
 
+import api.ApiCotacaoDolar;
 import database.AtributosFixos;
 
 public class Maquinarios extends AtributosFixos {
 
     private double qtdHoraTrator;
     private double valorHoraTrator;
-    private double contacaoDolar = 5.70;
 
     public Maquinarios(double qtdHoraTrator, double valorHoraTrator) {
         this.qtdHoraTrator = qtdHoraTrator;
@@ -21,8 +21,13 @@ public class Maquinarios extends AtributosFixos {
         return valorHoraTrator;
     }
 
-    public double CalcM() {
-        double resulM = (qtdHoraTrator * valorHoraTrator) / contacaoDolar;
-        return resulM;
+    public double calcM() {
+
+        try {
+            double cotacaoDolar = ApiCotacaoDolar.getCotacaoDolar();
+            return (qtdHoraTrator * valorHoraTrator) / cotacaoDolar;
+        } catch (Exception e) {
+            throw new RuntimeException("Erro ao calcular Maquinarios: " + e.getMessage());
+        }
     }
 }

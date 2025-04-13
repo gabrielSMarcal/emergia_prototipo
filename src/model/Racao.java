@@ -1,12 +1,12 @@
 package model;
 
+import api.ApiCotacaoDolar;
 import database.AtributosFixos;
 
 public class Racao extends AtributosFixos{
 
     private int saca;
     private double valorSaca;
-    private double cotacaoDolar = 5.7;
 
     public Racao (int saca, double valorSaca){
         this.saca = saca;
@@ -21,8 +21,13 @@ public class Racao extends AtributosFixos{
         return valorSaca;
     }
 
-    public double CalcR() {
-        double resulR = (saca * valorSaca * getMesAno())/cotacaoDolar;
-        return resulR;
+    public double calcR() {
+
+        try {
+            double cotacaoDolar = ApiCotacaoDolar.getCotacaoDolar();
+            return (saca * valorSaca * getMesAno()) / cotacaoDolar;
+        } catch (Exception e) {
+            throw new RuntimeException("Erro ao calcular Racao: " + e.getMessage());
+        }
     }
 }

@@ -21,7 +21,7 @@ public class PotencialQuimico extends AtributosFixos {
         return mediaChuva;
     }
 
-    public double CalcPQ() {
+    public double calcPQ() {
         double resulPQ = haFazenda * mediaChuva * getConversaoHaParaM2() * getKgPorM3() * getEnergiaPorKg();
         return resulPQ;
     }
