@@ -1,5 +1,6 @@
 package model;
 
+import api.ApiCotacaoDolar;
 import database.AtributosFixos;
 
 public class Gado extends AtributosFixos {
@@ -14,13 +15,25 @@ public class Gado extends AtributosFixos {
         this.anosVidamedia = anosVida;
     }
 
-    /* não consegui chamar as constante igual você fez, elas já estão com em AtributoFixos e com nome de gado*/
+    public double getPesoKgMedia() {
+        return pesoKgMedia;
+    }
 
-    /* o calculo é este: = (pesoKg * numeroAnimais / anosVida) * pesoSecoPorAnimal * kcalPorGrama * joulesPorKcal * gramasPorKg; */
+    public int getNumeroAnimais() {
+        return numeroAnimais;
+    }
 
-    /* o que foi atualizado:
-    - adicionei esta classe que estava faltando
-    - Não conseguir chamara as constantes, já estão no AtributosFixo
-    - Deixei o cálculo pronto.
-     */
+    public float getAnosVidamedia() {
+        return anosVidamedia;
+    }
+
+    public double calcGado() {
+        try {
+            double cotacaoDolar = ApiCotacaoDolar.getCotacaoDolar();
+            return (pesoKgMedia * numeroAnimais / anosVidamedia) * getPesoSecoPorAnimal()
+                    * getKcalPorGrama() * getJoulesPorKcal() * getGramasPorKg() / cotacaoDolar;
+        } catch (Exception e) {
+            throw new RuntimeException("Erro ao calcular Gado: " + e.getMessage());
+        }
+    }
 }

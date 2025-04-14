@@ -15,15 +15,15 @@ public class Main {
             System.out.println("""
                     **************************************************************************
                     Bem vindo ao calculador de emergia para agropecuária! Escolha um cálculo:
-                    1 - Calcular emergia por agua usada
-                    2 - Calcular emergia por combustivel utilizado
-                    3 - Calcular emergia por energia elétrica
-                    4 - Calcular emergia por mão de obra
-                    5 - Calcular emergia por quantidade de ração
-                    6 - Calcular emergia por  cuidado do solo
-                    7 - Calcular emergia por maquinário
-                    8 - Calcular emergia por perda do solo
-                    9 - Calcular emergia por potencial químico
+                     1 - Calcular emergia por agua usada
+                     2 - Calcular emergia por combustivel utilizado
+                     3 - Calcular emergia por energia elétrica
+                     4 - Calcular emergia por mão de obra
+                     5 - Calcular emergia por quantidade de ração
+                     6 - Calcular emergia por cuidado do solo
+                     7 - Calcular emergia por maquinário
+                     8 - Calcular emergia por perda do solo
+                     9 - Calcular emergia por potencial químico
                     10 - Calcular emergia por Valor de consumo e manutenção da fazenda
                     11 - Calcular emergia do gado
                     12 - Calcular emergia por produção de leite
@@ -83,6 +83,7 @@ public class Main {
                     int saca = leitura.nextInt();
                     System.out.println("Digite o valor da saca:");
                     double valorSaca = leitura.nextDouble();
+                    System.out.println("Analisando...");
                     Racao racaoUsada = new Racao(saca, valorSaca);
                     valorEmergeticoTotal += racaoUsada.calcR();
                     System.out.println("Valor emergético da ração: " + racaoUsada.calcR());
@@ -103,9 +104,10 @@ public class Main {
                     double qtdHoraTrator = leitura.nextDouble();
                     System.out.println("Digite o valor da hora do Trator, em reais: ");
                     double valorHoraTrator = leitura.nextDouble();
+                System.out.println("Analisando...");
                     Maquinarios maquinarios = new Maquinarios(qtdHoraTrator,valorHoraTrator);
                     valorEmergeticoTotal += maquinarios.calcM();
-                    System.out.println("Valor emergético do maquinário: " + maquinarios.calcM());
+                    System.out.println("Valor emergético de manutenção: " + maquinarios.calcM());
                     break;
                 case 8:
                     System.out.println("Digite a quantidade de perda do solo:");
@@ -128,9 +130,21 @@ public class Main {
                     double bens = leitura.nextDouble();
                     System.out.println("Digite a quantidade de anos deste gasto: ");
                     int anos = leitura.nextInt();
+                    System.out.println("Analisando...");
                     ValorConsumoManutencao valorConsumoManutencao = new ValorConsumoManutencao(bens,anos);
                     valorEmergeticoTotal += valorConsumoManutencao.calcBens();
                     System.out.println("Valor emergético do maquinário: " + valorConsumoManutencao.calcBens());
+                    break;
+                case 11:
+                    System.out.println("Digite o peso médio do gado em kg: ");
+                    double pesoKgMedia = leitura.nextDouble();
+                    System.out.println("Digite a quantidade de animais: ");
+                    int numeroAnimais = leitura.nextInt();
+                    System.out.println("Digite a quantidade de anos de vida média do gado: ");
+                    float anosVidamedia = leitura.nextFloat();
+                    Gado gado = new Gado(pesoKgMedia, numeroAnimais, anosVidamedia);
+                    valorEmergeticoTotal += gado.calcGado();
+                    System.out.println("Valor emergético do gado: " + gado.calcGado());
                     break;
                 case 12:
                     System.out.println("Digite a area da sua fazenda: ");
