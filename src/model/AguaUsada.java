@@ -29,8 +29,11 @@ public class AguaUsada extends AtributosFixos {
     public double calcAU (){
 
         double totalLitrosDia = (litroPorDiaAnimal * qtdAnimal) + litrosAdicionalDia;
-        double totalEnergiaAno = totalLitrosDia * getDiasAno() * getQtdEnergiaPorKilo();
-        return totalEnergiaAno;
+        return totalLitrosDia * getDiasAno() * getQtdEnergiaPorKilo(); // energia ano
     }
+    /*
+    o que atualizei:
+    - Retirei a variável resul e coloquei apenas return
+     */
 
 }

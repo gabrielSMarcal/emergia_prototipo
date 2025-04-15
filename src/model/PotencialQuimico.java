@@ -22,10 +22,10 @@ public class PotencialQuimico extends AtributosFixos {
     }
 
     public double calcPQ() {
-        double resulPQ = haFazenda * mediaChuvaAnoMetros * getConversaoHaParaM2() * getKgPorM3() * getEnergiaPorKg();
-        return resulPQ;
+        return haFazenda * mediaChuvaAnoMetros * getConversaoHaParaM2() * getKgPorM3() * getEnergiaPorKg();
     }
-    /* O que atualizei:
-    - Mudei o nome da variável para ficar mais intuitivo.
+    /*
+    o que atualizei:
+    - Retirei a variável resul e coloquei apenas return
      */
 }

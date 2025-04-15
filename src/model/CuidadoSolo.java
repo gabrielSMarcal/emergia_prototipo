@@ -22,13 +22,12 @@ public class CuidadoSolo extends AtributosFixos{
     }
 
     public double calcCS() {
-        double resulCS = (toneladasPorHa/ano) * getConversaoToneladaParaGramas() * areaDevastadaPeloGado /*getAreaPorHa()*/;
-        return resulCS;
+        /*getAreaPorHa()*/
+        return (toneladasPorHa/ano) * getConversaoToneladaParaGramas() * areaDevastadaPeloGado;
     }
 
-    /* O que foi atualizado:
-    - Mudei o nome da variável para ficar mais intuitivo
-    - Adicionei uma variável ano (não é constante)
-    - No cálculo foi adicionado ano
+    /*
+    o que atualizei:
+    - Retirei a variável resul e coloquei apenas return
      */
 }

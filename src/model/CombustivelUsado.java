@@ -28,7 +28,10 @@ public class CombustivelUsado extends AtributosFixos{
     }
 
     public double calcularCombustivelUsado() {
-        double resulCU = (horasTratorPorAno * qtdTrator * getJoulesPorTonelada()) / getToneladaPorLitro();
-        return resulCU;
+        return (horasTratorPorAno * qtdTrator * getJoulesPorTonelada()) / getToneladaPorLitro();
     }
+    /*
+    o que atualizei:
+    - Retirei a variável resul e coloquei apenas return
+     */
 }

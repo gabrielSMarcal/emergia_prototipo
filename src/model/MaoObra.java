@@ -28,12 +28,11 @@ public class MaoObra extends AtributosFixos{
     }
 
     public double calcMO() {
-        double resulMO = (pessoa * horasTrabalhada * qtdDiasTrabalhado) / horasAnoReferencia * getEnergiaPessoaAno();
-        return resulMO;
+        return (pessoa * horasTrabalhada * qtdDiasTrabalhado) / horasAnoReferencia * getEnergiaPessoaAno();
     }
 
-    /* O que atualizei:
-    - corrigir o cálculo
-    - adicionei uma variável constante, mas não coloquei no AtributoFixo, porque não sei puxar com get.
+    /*
+    o que atualizei:
+    - Retirei a variável resul e coloquei apenas return
      */
 }

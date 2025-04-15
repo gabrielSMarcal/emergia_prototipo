@@ -175,8 +175,5 @@ public class Main {
             }
         }
     }
-    /* o que atualizei:
-    - Coloquei as classes que estavam faltando
-    - Testei todas as classes e todos os calculos estão certos, só falta do gado (faz o cálculo) e corrigir a API de cotação de dolar da classe ValorConsumoManutencao.
-     */
+
 }

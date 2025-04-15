@@ -1,6 +1,6 @@
 package model;
 
-import api.ApiCotacaoDolar;
+
 import database.AtributosFixos;
 
 public class Gado extends AtributosFixos {
@@ -28,12 +28,14 @@ public class Gado extends AtributosFixos {
     }
 
     public double calcGado() {
-        try {
-            double cotacaoDolar = ApiCotacaoDolar.getCotacaoDolar();
-            return (pesoKgMedia * numeroAnimais / anosVidamedia) * getPesoSecoPorAnimal()
-                    * getKcalPorGrama() * getJoulesPorKcal() * getGramasPorKg() / cotacaoDolar;
-        } catch (Exception e) {
-            throw new RuntimeException("Erro ao calcular Gado: " + e.getMessage());
-        }
+
+        return (pesoKgMedia * numeroAnimais )/ anosVidamedia * getPesoSecoPorAnimal() * getKcalPorGramaCarne() * getJoulesPorKcal() * getGramasPorKg();
     }
+
+    /*
+    o que atualizei:
+    - Aqui não precisa fazer a cotação do dollar, só precisaria se fosse vender o gado. Este calculo é para saber a média de energia utilizada para à criação do gado.
+    - Retirei a variável resul e coloquei apenas return
+    - Mudei o getKcalPorGrama para getKcalPorGramaCarne, corrigindo o cálculo
+     */
 }

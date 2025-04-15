@@ -25,12 +25,12 @@ public class ProducaoLeite extends AtributosFixos {
 
         double energiaTotalano = leitePorDia * getDiasAno() * getLitroParaGrama()
                 * getKcalPorGramaLeite() * getJoulesPorKcalLeite();
-        double resulPL = energiaTotalano/haFazendaLeite;
 
-        return resulPL;
+        return energiaTotalano/haFazendaLeite; //energia por Ha
     }
 
-    /* o que foi atualizei:
-    - Adicionei um comentário, acho que só.
+    /*
+    o que atualizei:
+    - Retirei a variável resul e coloquei apenas return
      */
 }
