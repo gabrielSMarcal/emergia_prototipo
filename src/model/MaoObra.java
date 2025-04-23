@@ -5,8 +5,11 @@ import database.AtributosFixos;
 public class MaoObra extends AtributosFixos{
 
     private int pessoa;
+    private String uPessoa = "U";
     private double horasTrabalhada;
+    private String uHorasTrabalhada = "H";
     private int qtdDiasTrabalhado;
+    private String uQtdDiasTrabalhado = "Dias";
     private int horasAnoReferencia = 2000;
 
     public MaoObra (int pessoa, double horasTrabalhada, int qtdDiasTrabalhado){

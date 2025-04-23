@@ -1,12 +1,15 @@
-package model;
+package model.energiaNRenovavel;
 
 import database.AtributosFixos;
 
 public class AguaUsada extends AtributosFixos {
 
     private double litroPorDiaAnimal;
+    private String lAnimal = "L";
     private int qtdAnimal;
+    private String uAnimal = "U";
     private double litrosAdicionalDia;
+    private String lAnimalAdicinal = "L";
 
     public AguaUsada (double litroPorDiaAnimal, int qtdAnimal, double litrosAdicionalDia){
         this.litroPorDiaAnimal= litroPorDiaAnimal;
@@ -28,7 +31,7 @@ public class AguaUsada extends AtributosFixos {
 
     public double calcAU (){
 
-        double totalLitrosDia = (litroPorDiaAnimal * qtdAnimal) + litrosAdicionalDia;
+        double totalLitrosDia = litroPorDiaAnimal * qtdAnimal + litrosAdicionalDia;
         return totalLitrosDia * getDiasAno() * getQtdEnergiaPorKilo(); // energia ano
     }
     /*

@@ -5,6 +5,7 @@ import database.AtributosFixos;
 public class Eletricidade extends AtributosFixos{
 
     private double energiaPORKWH;
+    private String uEnergiaKWH = "kWH";
 
 
     public Eletricidade (double energiaPORKWH) {

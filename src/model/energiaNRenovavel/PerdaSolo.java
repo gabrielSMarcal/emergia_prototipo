@@ -1,10 +1,12 @@
-package model;
+package model.energiaNRenovavel;
 
 import database.AtributosFixos;
 
 public class PerdaSolo extends AtributosFixos {
 
     private double perdaDeSoloToneladasPorAno;
+    private String tPerdadeSolo = "T";
+
 
     public PerdaSolo(double perdaDeSoloToneladasPorAno){
         this.perdaDeSoloToneladasPorAno = perdaDeSoloToneladasPorAno;

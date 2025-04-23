@@ -6,7 +6,9 @@ import database.AtributosFixos;
 public class Racao extends AtributosFixos{
 
     private int saca;
+    private String uSaca = "U";
     private double valorSaca;
+    private String uValorSaca = "R$";
 
     public Racao (int saca, double valorSaca){
         this.saca = saca;

@@ -6,7 +6,9 @@ import database.AtributosFixos;
 public class Maquinarios extends AtributosFixos {
 
     private double qtdHoraTrator;
+    private String QtdHorasTrator = "H";
     private double valorHoraTrator;
+    private String uValorHoraTrator = "R$";
 
     public Maquinarios(double qtdHoraTrator, double valorHoraTrator) {
         this.qtdHoraTrator = qtdHoraTrator;

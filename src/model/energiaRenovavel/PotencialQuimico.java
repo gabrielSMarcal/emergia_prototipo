@@ -1,4 +1,4 @@
-package model;
+package model.energiaRenovavel;
 
 import database.AtributosFixos;
 
@@ -6,7 +6,9 @@ public class PotencialQuimico extends AtributosFixos {
 
     // ha = hectares
     private double haFazenda;
+    private String uFazenda = "Ha - Hectares";
     private double mediaChuvaAnoMetros; //é por ano em metros
+    private String uChuvaMetros = "M³";
 
     public PotencialQuimico(double haFazenda, double mediaChuvaAnoMetros){
         this.haFazenda = haFazenda;

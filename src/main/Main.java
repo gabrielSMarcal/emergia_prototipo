@@ -1,6 +1,9 @@
 package main;
 
 import model.*;
+import model.energiaNRenovavel.AguaUsada;
+import model.energiaNRenovavel.PerdaSolo;
+import model.energiaRenovavel.PotencialQuimico;
 
 import java.util.Scanner;
 
@@ -170,7 +173,7 @@ public class Main {
             System.out.println("Deseja fazer mais cálculos? (1 - Sim, 0 - Não)");
             int continuar = leitura.nextInt();
             if (continuar == 0) {
-                System.out.println("Valor emergético total: " + valorEmergeticoTotal);
+                System.out.printf("Valor emergético total: %.2e",valorEmergeticoTotal);
                 break;
             }
         }

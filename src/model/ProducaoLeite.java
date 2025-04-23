@@ -6,7 +6,9 @@ public class ProducaoLeite extends AtributosFixos {
 
     // ha = hectares
     private double leitePorDia;
+    private String uLeitePorDia = "L";
     private double haFazendaLeite;
+    private String uHaFAzebdaLeite = "Ha";
 
     public ProducaoLeite(double leitePorDia, double haFazendaLeite) {
             this.haFazendaLeite = haFazendaLeite; /* este Ha é o tamanho da fazendo, ou seja, a gente pode puxar de uma variável que já existe.*/

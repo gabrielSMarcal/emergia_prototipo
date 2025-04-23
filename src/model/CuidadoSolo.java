@@ -6,7 +6,9 @@ public class CuidadoSolo extends AtributosFixos{
 
     // Ha = Hectatres
     private double toneladasPorHa;
+    private String uToneladasHa = "T";
     private int ano;
+    private String uAno = "Ano";
 
 
     public double getToneladasPorHa() {

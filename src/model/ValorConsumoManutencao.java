@@ -6,7 +6,9 @@ import database.AtributosFixos;
 public class ValorConsumoManutencao extends AtributosFixos {
 
     private double bens;
-    private int anos; // não é constante, é em quantos anos o valor em bens foi gasto na fazenda
+    private String uBens = "R$";
+    private int anos;
+    private String uAnos ="Ano"; // não é constante, é em quantos anos o valor em bens foi gasto na fazenda
 
 
 

@@ -6,8 +6,11 @@ import database.AtributosFixos;
 public class Gado extends AtributosFixos {
 
     private double pesoKgMedia;
+    private String uPesoKgMedia = "Kg";
     private int numeroAnimais;
+    private String uNumeroAnimal = "U";
     private float anosVidamedia;
+    private String uAnosVida = "Ano";
 
     public Gado (double pesoKgMedia, int numeroAnimais, float anosVida){
         this.pesoKgMedia = pesoKgMedia;

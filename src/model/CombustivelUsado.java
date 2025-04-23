@@ -5,8 +5,11 @@ import database.AtributosFixos;
 public class CombustivelUsado extends AtributosFixos{
 
     private double horasTratorPorAno;
+    private String uHorasTrator = "Hrs";
     private double qtdTrator;
+    private String uQtdTrator = "U";
     private double litrosPorHora;
+    private String uLitrosCombustivelHora = "L";
 
     public CombustivelUsado(double horasTratorPorAno, double qtdTrator, double litrosPorHora) {
         this.horasTratorPorAno = horasTratorPorAno;
