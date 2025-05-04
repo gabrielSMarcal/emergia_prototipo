@@ -1,4 +1,4 @@
-package model;
+package model.contribuicaoHumana.operacoesProducao;
 
 import api.ApiCotacaoDolar;
 import database.AtributosFixos;
@@ -9,6 +9,10 @@ public class Racao extends AtributosFixos{
     private String uSaca = "U";
     private double valorSaca;
     private String uValorSaca = "R$";
+    private double resulRacao;
+    private String uResulRacao = "unid/ano";
+    private double resulRefEmergiaSolarRacao;
+    private String uResulRefEmergiaSolarRacao = "seJ/unid";
 
     public Racao (int saca, double valorSaca){
         this.saca = saca;
@@ -27,9 +31,15 @@ public class Racao extends AtributosFixos{
 
         try {
             double cotacaoDolar = ApiCotacaoDolar.getCotacaoDolar();
-            return (saca * valorSaca * getMesAno()) / cotacaoDolar;
+            resulRacao = (saca * valorSaca * getMesAno()) / cotacaoDolar;
+            return resulRacao;
         } catch (Exception e) {
             throw new RuntimeException("Erro ao calcular Racao: " + e.getMessage());
         }
+    }
+
+    public  double calRefEmergiaSolarRacao(){
+        resulRefEmergiaSolarRacao = calcR() * getTransformidadeRacao();
+        return resulRefEmergiaSolarRacao;
     }
 }

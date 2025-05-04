@@ -1,4 +1,4 @@
-package model;
+package model.contribuicaoHumana.bens;
 
 import api.ApiCotacaoDolar;
 import database.AtributosFixos;
@@ -8,7 +8,11 @@ public class ValorConsumoManutencao extends AtributosFixos {
     private double bens;
     private String uBens = "R$";
     private int anos;
-    private String uAnos ="Ano"; // não é constante, é em quantos anos o valor em bens foi gasto na fazenda
+    private String uAnos ="Ano";
+    private double resulVCM;
+    private String uResulVCM = "unid/ano";
+    private double resulRefEmergiaSolarVCM;
+    private String uResulRefEmergiaSolarVCM = "seJ/unid";
 
 
 
@@ -28,9 +32,15 @@ public class ValorConsumoManutencao extends AtributosFixos {
     public double calcBens(){
         try {
             double cotacaoDolar = ApiCotacaoDolar.getCotacaoDolar();
-            return (bens / anos) / cotacaoDolar;
+            resulVCM = (bens / anos) / cotacaoDolar;
+            return resulVCM;
         } catch (Exception e) {
             throw new RuntimeException("Erro ao calcular Valor de consumo e manutenção: " + e.getMessage());
         }
+    }
+
+    public double calRefEmergiaSolarVCM(){
+        resulRefEmergiaSolarVCM = calcBens() * getTransformidadeRacao();
+        return resulRefEmergiaSolarVCM;
     }
 }

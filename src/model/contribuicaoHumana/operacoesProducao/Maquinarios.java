@@ -1,4 +1,4 @@
-package model;
+package model.contribuicaoHumana.operacoesProducao;
 
 import api.ApiCotacaoDolar;
 import database.AtributosFixos;
@@ -9,6 +9,10 @@ public class Maquinarios extends AtributosFixos {
     private String QtdHorasTrator = "H";
     private double valorHoraTrator;
     private String uValorHoraTrator = "R$";
+    private double resulMaquinario;
+    private String uResulMaquinario = "unid/ano";
+    private double resulRefEmergiaSolarMaquinario;
+    private String uResulRefEmergiaSolarMaquinario = "seJ/unid";
 
     public Maquinarios(double qtdHoraTrator, double valorHoraTrator) {
         this.qtdHoraTrator = qtdHoraTrator;
@@ -27,9 +31,15 @@ public class Maquinarios extends AtributosFixos {
 
         try {
             double cotacaoDolar = ApiCotacaoDolar.getCotacaoDolar();
-            return (qtdHoraTrator * valorHoraTrator) / cotacaoDolar;
+            resulMaquinario = (qtdHoraTrator * valorHoraTrator) / cotacaoDolar;
+            return resulMaquinario;
         } catch (Exception e) {
             throw new RuntimeException("Erro ao calcular Maquinarios: " + e.getMessage());
         }
+    }
+
+    public double calRefEmergiaSolarMaquinario(){
+        resulRefEmergiaSolarMaquinario = calcM() * getTransformidadeMaquinario();
+        return resulRefEmergiaSolarMaquinario;
     }
 }
